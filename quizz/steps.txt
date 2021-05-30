@@ -1,0 +1,6 @@
+create quizz question list
+create learning dataset
+create logic
+use k-nearest neighbors algorithm
+save data in database
+ask professional email (exclude gmail, hotmail, outlook, protonmail et autres)

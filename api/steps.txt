@@ -1,0 +1,2 @@
+retrieve data from sqlite3
+create 2 data schemas for the XML, 1 without login, 1 with login
