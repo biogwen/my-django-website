@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Qui suis-je?
+{% endblock %}
+{% block style %}
+
+{% endblock %}
+{% block content %}
+<div class="px-4 py-5 my-5 text-center">
+
+    <h1 class="display-5 fw-bold">Learn more about me</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">
+          Don't expect to know everything about me, <br> or we won't have a thing to talk about when we meet
+      </p>
+        <div><h3>Download CV</h3></div>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="/"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Ms Word format</button></a>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4 disabled">API</button>
+      </div>
+    </div>
+  </div>
+
+<div class="container px-4 py-5" id="icon-grid">
+    <h2 class="pb-2 border-bottom">Some key points</h2>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+      <div class="col d-flex align-items-start">
+
+        <div>
+          <h4 class="fw-bold mb-0">Years of experience</h4>
+            <br>
+            <p>{{ years }} years in IT</p>
+            <p>10 years with Agile methodology</p>
+            <p>4 years as Coach or Change manager</p>
+            <p>3 years as a Virtual facilitator</p>
+            <p>6 years working at Project or Product Management level</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+
+        <div>
+          <h4 class="fw-bold mb-0">Sectors</h4>
+            <br>
+            <p>Pure IT</p>
+            <p>Governmental organisations</p>
+            <p>Military communication</p>
+            <p>Financial and Bank</p>
+            <p>Telecom</p>
+            <p>Real estate management</p>
+            <p>Heavy industry</p>
+            <p>Utility</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+
+        <div>
+          <h4 class="fw-bold mb-0">Methologies</h4>
+            <br>
+            <p>Agile (Scrum, Kanban, nexus, Safe, Spotify model...)</p>
+            <p>Waterfall</p>
+            <p>ITIL</p>
+            <p>ADKAR</p>
+            <p>Devops</p>
+            <p>Lean startup (OK it's an Agile one but... we can talk about it)</p>
+            <p>... and many others</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+
+        <div>
+          <h4 class="fw-bold mb-0">Python knowledge</h4>
+            <br>
+            <p>Django</p>
+            <p>Data science</p>
+            <p>Machine learning & Deep learning</p>
+            <p>API</p>
+            <p>Automation</p>
+            <p>Web scraping</p>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+<div class="container px-4 py-5" id="featured-3">
+        <h2 class="pb-2 border-bottom bg-white">My hobbies</h2>
+      <div class="row">
+      <div class="col-lg-4">
+        <img src="{% static 'images/forge3.jpg' %}" class="bd-placeholder-img rounded-circle" width="140" height="140">
+        <h2>Blacksmithing</h2>
+        <p class="bg-white">When you want an example about perfect project management and risk management, just look at a blacksmith. One mistake and your all work is destroyed!<br>
+        OK! It's also because I can make music with fire, steel and big hammers ;)</p>
+
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="{% static 'images/tir.jpg' %}" class="bd-placeholder-img rounded-circle" width="140" height="140">
+        <h2>Target shooting</h2>
+        <p class="bg-white">It's a way of merging my love for history, precision and physics.</p>
+
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="{% static 'images/travel.jpg' %}" class="bd-placeholder-img rounded-circle" width="140" height="140">
+        <h2>Travelling</h2>
+        <p class="bg-white">Past destinations: Ireland, Guadeloupe, Germany, Brittany, Sardinia and Belgium <br>
+        Future destinations: Estonia, Korea, Japan, Greece and Australia</p>
+
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+     </div>
+{% endblock %}
