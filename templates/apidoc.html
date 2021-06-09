@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+API Doc
+{% endblock %}
+{% block style %}
+<style>
+
+</style>
+{% endblock %}
+{% block content %}
+<h1 align="center">API Doc</h1>
+    <p> <br> <br></p>
+    <div class="container px-4 py-5" id="icon-grid">
+<h3>api/cv :</h3>
+    <p></p>
+<p>position = CharField(max_length=100) : <br>
+company = CharField(max_length=100)<br>
+date_start = DateField(null=False, blank=False)<br>
+date_end = DateField(null=True, blank=True)<br>
+environment = CharField(max_length=300)<br>
+activities = CharField(max_length=1000)<br>
+    magic = CharField(max_length=400)</p>
+</div>
+
+{% endblock %}

@@ -6,3 +6,6 @@ from .serializer import CvSerializer
 class ListCv(generics.ListAPIView):
     queryset = Cv.objects.all()
     serializer_class = CvSerializer
+
+def Doc(request):
+    return render(request, 'apidoc.html')
