@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'blog.apps.BlogConfig',
     'api.apps.ApiConfig',
-    'rest_framework'
+    'rest_framework',
+    'quizz.apps.QuizzConfig'
 ]
 
 MIDDLEWARE = [
