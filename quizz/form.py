@@ -2,5 +2,10 @@
 from django import forms
 
 
-class Email(forms.Form):
-    email = forms.EmailField(label='email')
+from .models import Email
+
+class PostForm(forms.ModelForm):
+
+    class Meta:
+        model = Email
+        fields = ('email',)

@@ -9,10 +9,12 @@
     <br>
     <br>
     <p>Please enter your email address to receive the detailed result</p>
-    {% csrf_token %}
-    {{ form }}
+
+
     <form action="" method="post">
-        {% if form.email == '1' %}
+        {% csrf_token %}
+        {{ form }}
+
         <p>hello</p>
         {% endif %}
     <input type="submit">

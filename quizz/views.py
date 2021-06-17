@@ -1,22 +1,25 @@
 from django.shortcuts import render
-from .form import Email
+from .form import PostForm
 
 
 def quizemail(request):
-    form = Email()
+    form = PostForm()
     error = ""
     if request.method == 'POST':
-        form = Email(request.POST)
+        form = PostForm(request.POST)
         if form.is_valid():
-            email = form.cleaned_data["email"]
+            email = form.save(commit=False)
+            email.save()
 
-            domain_list = ["google.com"]
-            domain = email.split('@')[1]
+            domain_list = ["gmail.com",]
+            email = email.email
+            domain = email.split('@')
+            domain = domain[1]
+            print (domain)
             if domain in domain_list:
                 error = "Please put a professional email address"
             else:
-                form.save()
-                quizform()
+                error = ''
 
     context = {'form': form, "error": error}
 
@@ -24,7 +27,7 @@ def quizemail(request):
 
 
 def test(request):
-    form = Email()
+    form = PostForm()
     error = ""
     context = {'form': form, "error": error}
 
