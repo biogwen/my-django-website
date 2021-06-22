@@ -4,24 +4,18 @@ from .form import PostForm
 
 def quizemail(request):
     form = PostForm()
-    error = ""
+
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
             email = form.save(commit=False)
             email.save()
+            request.session['email'] = email.email
+            print(request.session.get('email'),)
 
-            domain_list = ["gmail.com",]
-            email = email.email
-            domain = email.split('@')
-            domain = domain[1]
-            print (domain)
-            if domain in domain_list:
-                error = "Please put a professional email address"
-            else:
-                error = ''
 
-    context = {'form': form, "error": error}
+
+    context = {'form': form}
 
     return render(request, 'quizemail.html', context)
 
