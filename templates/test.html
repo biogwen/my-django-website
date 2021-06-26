@@ -13,10 +13,17 @@
 
     <form action="" method="post">
         {% csrf_token %}
-        {{ form }}
+        {% for field in form %}
+        <div>
+            {{ field.errors }}
+            {{ field.label_tag }} : {{ field }}
+
+        </div>
+        {% endfor %}
+
 
         <p>hello</p>
-        {% endif %}
+
     <input type="submit">
     </form>
 </body>

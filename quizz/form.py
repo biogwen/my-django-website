@@ -25,4 +25,4 @@ class PostForm(forms.ModelForm):
 class quizagile(forms.ModelForm):
     class Meta:
         model = Quizz
-        fields = ()
+        fields = ('__all__')

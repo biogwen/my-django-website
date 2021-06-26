@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .form import PostForm
+from .form import PostForm, quizagile
 
 
 def quizemail(request):
@@ -21,7 +21,7 @@ def quizemail(request):
 
 
 def test(request):
-    form = PostForm()
+    form = quizagile()
     error = ""
     context = {'form': form, "error": error}
 
