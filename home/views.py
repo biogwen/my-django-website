@@ -11,3 +11,6 @@ def cv(request):
     years = datum.year - 2007
     args['years'] = years
     return render(request, 'cv.html', args)
+
+def consultancy(request):
+    return render(request, 'consultancy.html')
