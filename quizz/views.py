@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .form import PostForm, quizagile
+from django.shortcuts import render, redirect
+from .form import PostForm, Quizagile
+from .logicquiz import logic
 
 
 def quizemail(request):
@@ -12,6 +13,7 @@ def quizemail(request):
             email.save()
             request.session['email'] = email.email
             print(request.session.get('email'),)
+            return redirect('test')
 
 
 
@@ -21,10 +23,27 @@ def quizemail(request):
 
 
 def test(request):
-    form = quizagile()
+    form = Quizagile()
+    if request.method == 'POST':
+        form = Quizagile(request.POST)
+        if form.is_valid():
+            quiz = form.save(commit=False)
+            quiz.save()
+
+            request.session['methodology'] = logic(quiz.maturity, quiz.teamsize, quiz.company_size, quiz.sprint_time)
+
+            return redirect('result')
+
+
     error = ""
     context = {'form': form, "error": error}
 
     return render(request, 'test.html', context)
 
 # Create your views here.
+def result(request):
+    methodology = request.session.get('methodology')
+    email = request.session.get('email')
+    context = {'methodology': methodology, 'email': email}
+    return render(request, 'result.html', context)
+    
