@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .form import PostForm, Quizagile
 from .logicquiz import logic
+from django.core.mail import EmailMessage
 
 
 def quizemail(request):
@@ -42,8 +43,20 @@ def test(request):
 
 # Create your views here.
 def result(request):
+
     methodology = request.session.get('methodology')
     email = request.session.get('email')
+
+    emailing = EmailMessage(
+        "Test result",
+        methodology,
+        email,
+        ['gwenael@mycoachingcompany.eu'],
+
+        reply_to=[email],
+        headers={'Message-ID': 'test result'},
+    )
+    emailing.send(fail_silently=False)
     context = {'methodology': methodology, 'email': email}
     return render(request, 'result.html', context)
     
