@@ -7,15 +7,19 @@ Quizz
 
 {% endblock %}
 {% block content %}
-<h1>Quizz</h1>
+<div class="container">
+    <h1>Quizz</h1>
     <br>
     <br>
-    <p>Please enter your email address</p>
-
+    <p>Please enter your professional email address (no gmail or hotmail) to access the quiz.</p>
+    <p>This information will only be used for this quiz and won't be transmitted to a third party.</p>
+<br>
 
     <form action="" method="post">
 {% csrf_token %}{{ form }}
-    <input type="submit">
-    </form>
 
+    <input type="submit" value="Submit">
+    </form>
+<br>
+</div>
 {% endblock %}
