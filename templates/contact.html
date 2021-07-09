@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-Agile quiz
+Contact
 {% endblock %}
 {% block style %}
 
 {% endblock %}
 {% block content %}
 <div class="container">
-    <h1>Quizz</h1>
+    <h1>{{ title }}</h1>
     <br>
     <br>
     <p></p>
@@ -18,18 +18,15 @@ Agile quiz
         {% csrf_token %}
         {% for field in form %}
         <div>
-
             {{ field.errors }}
             <div class="row g-3"><div class="col-sm-2">{{ field.label_tag }} </div> <div class="col-sm-1">{{ field }}</div></div>
             <p></p>
         </div>
         {% endfor %}
 
-
-
-
     <input type="submit" value="Submit">
     </form>
-
+<br>
+    <br>
 </div>
 {% endblock %}
